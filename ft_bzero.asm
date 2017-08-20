@@ -2,10 +2,11 @@ section .text
 global ft_bzero
 
 ft_bzero:
-  mov rax, rsi
-  mov rcx, rdi
+  mov  rax, rsi
+  mov  rcx, rdi
   cmp rax, 0
   jg  top
+  mov rax, rdi
   ret
 
 top:
