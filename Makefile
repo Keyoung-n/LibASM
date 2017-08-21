@@ -6,8 +6,9 @@ SRCO	= ft_bzero.o		\
 all: $(NAME)
 
 $(NAME):
-	@nasm -f macho64 ft_bzero.asm
-	@nasm -f macho64 ft_memset.asm
+	@nasm -f elf64 ft_bzero.asm
+	@nasm -f elf64 ft_memset.asm
+	@nasm -f elf64 ft_isprint.asm
 	@ar r	$(NAME) $(SRCO)
 	@ranlib $(NAME)
 

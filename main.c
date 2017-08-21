@@ -3,6 +3,8 @@
 #include <stdio.h>
 #include <string.h>
 
+int ft_isprint(int c);
+
 // bzero
 void ft_bzero(void *s, size_t n);
 
@@ -84,6 +86,23 @@ void strlen_test1() {
   else
     printf("Fail\n");
 }
+
+int isprint_test1()
+{
+    if (ft_isprint(200) == 1)
+        printf("isprint test1 failed\n");
+    else if (ft_isprint(200) == 0)
+        printf("isprint test1 passed\n");
+}
+
+int isprint_test2()
+{
+    if (ft_isprint(65) == 1)
+        printf("isprint test1 passed\n");
+    else if (ft_isprint(65) == 0)
+        printf("isprint test1 failed\n");
+}
+
 int main() {
   bzero_test1();
   bzero_test2();
@@ -92,5 +111,8 @@ int main() {
   memset_test2();
   memset_test3();
   memset_test4();
+
+  isprint_test1();
+  isprint_test2();
 	return 0;
 }
