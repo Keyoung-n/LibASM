@@ -73,6 +73,17 @@ void memset_test4() {
     printf("Fail\n");
 }
 
+// strlen
+size_t ft_strlen ( const char * str );
+
+void strlen_test1() {
+  char hello[] = "Hello world!";
+
+  if (ft_strlen(hello) == 12)
+    printf("Pass\n");
+  else
+    printf("Fail\n");
+}
 int main() {
   bzero_test1();
   bzero_test2();
