@@ -1,16 +1,16 @@
 section .text
-global ft_memset
+global _ft_memset
 
-ft_memset:
-  mov rbx, rsi ; seconed parameter
-  cmp rdx, 0
-  jg  top
-  mov rax, rsi
+_ft_memset:
+  mov rbx, rsi
+  mov rcx, rdx
+  cmp rcx, 0
+  jg  l1
+  mov rax, rdi
   ret
 
-top:
+l1:
   mov [rdi], bl
   inc  rdi
-  dec  rdx
-  jnz  top
+  loop l1
   ret

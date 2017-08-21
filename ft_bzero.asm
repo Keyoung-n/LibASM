@@ -1,18 +1,17 @@
 section .text
-global ft_bzero
+global _ft_bzero
 
-ft_bzero:
-  mov  rax, rsi
-  mov  rcx, rdi
-  cmp rax, 0
-  jg  top
+_ft_bzero:
+  mov rax, rdi
+  mov rcx, rsi
+  cmp rcx, 0
+  jg  l1
   mov rax, rdi
   ret
 
-top:
+l1:
   mov rbx, 0
-  mov [rcx], bl
-  inc  rcx
-  dec  rax
-  jnz  top
+  mov [rax], bl
+  inc rax
+  loop l1
   ret

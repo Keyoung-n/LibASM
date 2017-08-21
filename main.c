@@ -36,7 +36,7 @@ void memset_test1() {
   char	var[] = "hello world";
 
   printf("Memset test1: ");
-  if (memset(var, 3, 0) == ft_memset(var, 3, 0))
+  if (memcmp(memset(var, 3, 0), ft_memset(var, 3, 0), 1) == 0)
     printf("Pass\n");
   else
     printf("Fail\n");
