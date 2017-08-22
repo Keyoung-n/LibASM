@@ -4,6 +4,10 @@
 #include <string.h>
 
 int ft_isprint(int c);
+int ft_isalnum(int c);
+int ft_isascii(int c);
+
+int ft_isdigit(int c);
 
 // bzero
 void ft_bzero(void *s, size_t n);
@@ -145,6 +149,70 @@ void isprint_test2()
         printf("isprint test1 failed\n");
 }
 
+void isalnum_test1()
+{
+    if (ft_isalnum(65))
+        printf("isalnum test1 passed\n");
+    else
+        printf("isalnum test1 failed\n");
+}
+
+void isalnum_test2()
+{
+    if (ft_isalnum(48))
+        printf("isalnum test2 passed\n");
+    else
+        printf("isalnum test2 failed\n");
+}
+
+void isalnum_test3()
+{
+    if (ft_isalnum(8) == 0)
+        printf("isalnum test3 passed\n");
+    else
+        printf("isalnum test3 failed\n");
+}
+
+void   isdigit_test1()
+{
+    if (ft_isdigit('1'))
+        printf("isdigit test1 passed\n");
+    else
+        printf("isdigit test1 failed\n");
+}
+
+void   isdigit_test2()
+{
+    if (ft_isdigit('A') == 0)
+        printf("isdigit test2 passed\n");
+    else
+        printf("isdigit test2 failed\n");
+}
+
+void isascii_test1()
+{
+    if (ft_isascii('A'))
+        printf("isascii test1 passed\n");
+    else
+        printf("isascii test1 failed\n");
+}
+
+void isascii_test2()
+{
+    if (ft_isascii(1))
+        printf("isascii test2 passed\n");
+    else
+        printf("isascii test2 failed\n");
+}
+
+void isascii_test3()
+{
+    if (ft_isascii(200) == 0)
+        printf("isascii test3 passed\n");
+    else
+        printf("isascii test3 failed\n");
+}
+
 int main() {
   bzero_test1();
   bzero_test2();
@@ -163,5 +231,15 @@ int main() {
   isprint_test1();
   isprint_test2();
 
+  isalnum_test1();
+  isalnum_test2();
+  isalnum_test3();
+
+  isdigit_test1();
+  isdigit_test2();
+
+  isascii_test1();
+  isascii_test2();
+  isascii_test2();
 	return 0;
 }

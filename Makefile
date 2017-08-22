@@ -7,7 +7,9 @@ SRCO	= 	ft_bzero.o 		\
 					ft_isprint.o	\
 					ft_isdigit.o	\
 					ft_strlen.o		\
-					ft_puts.o			\
+					ft_puts.o		\
+					ft_isalnum.o	\
+					ft_isascii.o    \
 
 OS := $(shell uname)
 all: $(NAME)
@@ -21,6 +23,8 @@ ifeq ($(OS), Darwin)
 	@nasm -f macho64 ft_isdigit.asm
 	@nasm -f macho64 ft_isprint.asm
 	@nasm -f macho64 ft_puts.asm
+	@nasm -f macho64 ft_isalnum.asm
+	@nasm -f macho64 ft_isascii.asm
 else
 	@nasm -f elf64 ft_bzero.asm
 	@nasm -f elf64 ft_memset.asm
@@ -29,6 +33,8 @@ else
 	@nasm -f elf64 ft_isdigit.asm
 	@nasm -f elf64 ft_isprint.asm
 	@nasm -f elf64 ft_puts.asm
+	@nasm -f elf64 ft_isalnum.asm
+	@nasm -f elf64 ft_isascii.asm
 endif
 	@ar r	$(NAME) $(SRCO)
 	@ranlib $(NAME)

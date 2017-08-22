@@ -4,20 +4,19 @@ section .text
         ret
     %endmacro
 
-    global  _ft_isprint
+    global  _ft_isascii
 
-_ft_isprint:
-            cmp     rdi, 32
-            jge     _next
+_ft_isascii:
+            cmp     rdi, 0
+            jge     _checkUpper
             jmp     _false
 
-_next:
-            cmp     rdi, 126
+_checkUpper:
+            cmp     rdi, 127
             jle     _true
             jmp     _false
 
 _true:
             return 1
-
 _false:
             return 0
