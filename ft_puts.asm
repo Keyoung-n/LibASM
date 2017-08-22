@@ -2,6 +2,7 @@ section .data
 
 section .text
     global _ft_puts
+    EXTERN _ft_strlen
 
 _ft_puts:
     mov rsi, rdi
@@ -12,16 +13,3 @@ _ft_puts:
 
     syscall
     ret
-
-_ft_strlen:
-          push  rbp
-          mov   rbp, rsp
-          sub   rcx, rcx
-          not   rcx
-          mov   rbx, [rbp + 8]
-          sub   al, al
-          cld
-  repne scasb
-          not   rcx
-          pop   rbp
-          lea   rax, [rcx - 1]

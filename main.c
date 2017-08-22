@@ -112,7 +112,7 @@ void puts_test2() {
     printf("Fail\n");
 }
 
-//
+// memcpy
 int main() {
   bzero_test1();
   bzero_test2();
