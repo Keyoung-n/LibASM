@@ -79,12 +79,40 @@ size_t ft_strlen ( const char * str );
 void strlen_test1() {
   char hello[] = "Hello world!";
 
+  printf("Strlen test1: ");
   if (ft_strlen(hello) == 12)
     printf("Pass\n");
   else
     printf("Fail\n");
 }
+void strlen_test2() {
+  char hello[] = "";
 
+  printf("Strlen test2: ");
+  if (ft_strlen(hello) == 0)
+    printf("Pass\n");
+  else
+    printf("Fail\n");
+}
+
+// puts
+int puts(const char *str);
+
+void puts_test1() {
+  printf("Puts test1: ");
+  puts("Pass");
+}
+void puts_test2() {
+  char test[] = "testing return...";
+
+  printf("Puts test2: ");
+  if (puts(test))
+    printf("Pass\n");
+  else
+    printf("Fail\n");
+}
+
+//
 int main() {
   bzero_test1();
   bzero_test2();
@@ -93,5 +121,11 @@ int main() {
   memset_test2();
   memset_test3();
   memset_test4();
+
+  strlen_test1();
+  strlen_test2();
+
+  puts_test1();
+  puts_test2();
 	return 0;
 }

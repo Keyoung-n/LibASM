@@ -1,5 +1,4 @@
 section .text
-
     %macro return 1
         mov     rax, %1
         ret
@@ -15,8 +14,8 @@ _ft_isprint:
 _next:
             cmp     rdi, 126
             jle     _true
-            jmp     _false            
-        
+            jmp     _false
+
 _true:
             return 1
 _false:
