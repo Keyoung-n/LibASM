@@ -10,7 +10,7 @@ _ft_strlen:
             sub     al, al          ; initiliaze al to 0
             cld                     ; clear directional bit: allows incrementing of pointer
     repne scasb                     ; scan the string while not equal to AL: REPNZ works too
-            not     rcx             ; invert bits again: RCX = strlen - 1
+            not     rcx             ; invert bits again: RCX = strlen + 1
             pop     rbp             
             lea     rax, [rcx - 1]  ; dec RCX again and load the effective address into RAX
             ret
