@@ -30,7 +30,6 @@ else
 	@nasm -f elf64 ft_isprint.asm
 	@nasm -f elf64 ft_puts.asm
 endif
-
 	@ar r	$(NAME) $(SRCO)
 	@ranlib $(NAME)
 

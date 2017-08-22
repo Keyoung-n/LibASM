@@ -3,6 +3,8 @@
 #include <stdio.h>
 #include <string.h>
 
+int ft_isprint(int c);
+
 // bzero
 void ft_bzero(void *s, size_t n);
 
@@ -85,6 +87,7 @@ void strlen_test1() {
   else
     printf("Fail\n");
 }
+
 void strlen_test2() {
   char hello[] = "";
 
@@ -113,7 +116,7 @@ void puts_test2() {
 }
 
 // memcpy
-void* memcpy( void* dest, const void* src, std::size_t count );
+void* ft_memcpy( void* dest, const void* src, size_t count );
 
 void memcpy_test1() {
   char test[] = "hello world";
@@ -124,6 +127,22 @@ void memcpy_test1() {
     printf("Pass\n");
   else
     printf("Fail\n");
+}
+
+void isprint_test1()
+{
+    if (ft_isprint(200) == 1)
+        printf("isprint test1 failed\n");
+    else if (ft_isprint(200) == 0)
+        printf("isprint test1 passed\n");
+}
+
+void isprint_test2()
+{
+    if (ft_isprint(65) == 1)
+        printf("isprint test1 passed\n");
+    else if (ft_isprint(65) == 0)
+        printf("isprint test1 failed\n");
 }
 
 int main() {
@@ -140,5 +159,9 @@ int main() {
 
   puts_test1();
   puts_test2();
+
+  isprint_test1();
+  isprint_test2();
+
 	return 0;
 }
