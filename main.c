@@ -99,21 +99,21 @@ void strlen_test2() {
 int ft_puts(const char *str);
 
 void puts_test1() {
-  printf("Puts test1: ");
+  puts("Puts test1...");
   ft_puts("Pass");
 }
 void puts_test2() {
   char test[] = "testing return...";
 
-  printf("Puts test2: ");
+  puts("Puts test2...");
   if (ft_puts(test))
-    printf("Pass\n");
+    puts("Pass");
   else
-    printf("Fail\n");
+    puts("Fail\n");
 }
 
 // memcpy
-void* memcpy( void* dest, const void* src, std::size_t count );
+void* ft_memcpy( void* dest, const void* src, size_t count );
 
 void memcpy_test1() {
   char test[] = "hello world";
