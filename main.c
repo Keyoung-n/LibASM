@@ -84,6 +84,7 @@ void strlen_test1() {
   else
     printf("Fail\n");
 }
+
 int main() {
   bzero_test1();
   bzero_test2();
