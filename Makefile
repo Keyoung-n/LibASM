@@ -10,26 +10,12 @@ SRCO	= 	ft_bzero.o 		\
 					ft_puts.o		\
 					ft_isalnum.o	\
 					ft_isascii.o    \
+					ft_strlen.o
 
 OS := $(shell uname)
 all: $(NAME)
 
 $(NAME):
-ifeq ($(OS), Darwin)
-	@nasm -f macho64 ft_bzero.asm
-	@nasm -f macho64 ft_isalpha.asm
-	@nasm -f macho64 ft_isdigit.asm
-	@nasm -f macho64 ft_isprint.asm
-	@nasm -f macho64 ft_memset.asm
-	@nasm -f macho64 ft_memcpy.asm
-	@nasm -f macho64 ft_puts.asm
-<<<<<<< HEAD
-	@nasm -f macho64 ft_isalnum.asm
-	@nasm -f macho64 ft_isascii.asm
-=======
-	@nasm -f macho64 ft_strlen.asm
->>>>>>> 7183a562475e95fd41ae572ee6ea3d7fccfb0c8b
-else
 	@nasm -f elf64 ft_bzero.asm
 	@nasm -f elf64 ft_isalpha.asm
 	@nasm -f elf64 ft_isdigit.asm
@@ -37,13 +23,9 @@ else
 	@nasm -f elf64 ft_memset.asm
 	@nasm -f elf64 ft_memcpy.asm
 	@nasm -f elf64 ft_puts.asm
-<<<<<<< HEAD
 	@nasm -f elf64 ft_isalnum.asm
 	@nasm -f elf64 ft_isascii.asm
-=======
 	@nasm -f elf64 ft_strlen.asm
->>>>>>> 7183a562475e95fd41ae572ee6ea3d7fccfb0c8b
-endif
 	@ar r	$(NAME) $(SRCO)
 	@ranlib $(NAME)
 
