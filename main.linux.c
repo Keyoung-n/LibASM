@@ -327,6 +327,18 @@ void memcpy_test4() {
     printf("failed\n");
 }
 
+void memcpy_test5() {
+  char str1[] = "hello world";
+  char str2[] = "xxxxxxxxxxx";
+  void *ret1  = _ft_memcpy(str2, str1, 0);
+  void *ret2  = memcpy(str2, str1, 0);
+
+  printf("memcpy test5: ");
+  if(memcmp(ret1, ret2, 11) == 0)
+    printf("passed\n");
+  else
+    printf("failed\n");
+}
 int main() {
   bzero_test1();
   bzero_test2();
@@ -368,5 +380,6 @@ int main() {
   memcpy_test2();
   memcpy_test3();
   memcpy_test4();
+  memcpy_test5();
 	return 0;
 }
