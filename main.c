@@ -10,10 +10,10 @@ int ft_isprint(int c);
 int ft_puts(const char *str);
 int ft_tolower(int c);
 int ft_toupper(int c);
-size_t ft_strlen (const char * str);
+size_t ft_strlen(const char * str);
 void  ft_bzero(void *s, size_t n);
 void* ft_memcpy(void* dest, const void* src, size_t count);
-void* ft_memset (void * ptr, int value, size_t num);
+void* ft_memset(void * ptr, int value, size_t num);
 
 // bzero
 

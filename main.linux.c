@@ -11,9 +11,10 @@ int _ft_isprint(int c);
 int _ft_puts(const char *str);
 int _ft_tolower(int c);
 int _ft_toupper(int c);
-size_t _ft_strlen ( const char * str );
+size_t _ft_strlen(const char * str);
 void _ft_bzero(void *s, size_t n);
-void* _ft_memset (void * ptr, int value, size_t num);
+void* _ft_memcpy(void *dest, const void *src, size_t n);
+void* _ft_memset(void * ptr, int value, size_t num);
 
 // bzero
 
@@ -277,6 +278,54 @@ void tolower_test3() {
       printf("failed\n");
 }
 
+// memcpy
+void memcpy_test1() {
+  char str1[] = "hello world";
+  char str2[] = "xxxxxxxxxxx";
+
+  printf("memcpy test1: ");
+  _ft_memcpy(str2, str1, 11);
+  if(memcmp(str1, str2, 11) == 0)
+    printf("passed\n");
+  else
+    printf("failed\n");
+}
+
+void memcpy_test2() {
+  char str1[] = "hello world";
+  char str2[] = "xxxxxxxxxxx";
+
+  printf("memcpy test2: ");
+  _ft_memcpy(str2, str1, 5);
+  if(memcmp(str1, str2, 5) == 0)
+    printf("passed\n");
+  else
+    printf("failed\n");
+}
+
+void memcpy_test3() {
+  int num1 = 100;
+  int num2 = 300;
+
+  printf("memcpy test3: ");
+  _ft_memcpy(&num2, &num1, 3);
+  if(memcmp(&num1, &num2, 3) == 0)
+    printf("passed\n");
+  else
+    printf("failed\n");
+}
+
+void memcpy_test4() {
+  char str1[] = "hello world";
+  char str2[] = "xxxxxxxxxxx";
+  void *ret1  = _ft_memcpy(str2, str1, 11);
+  void *ret2  = memcpy(str2, str1, 11);
+  printf("memcpy test4: ");
+  if(memcmp(ret1, ret2, 11) == 0)
+    printf("passed\n");
+  else
+    printf("failed\n");
+}
 int main() {
   bzero_test1();
   bzero_test2();
@@ -313,5 +362,10 @@ int main() {
   tolower_test1();
   tolower_test2();
   tolower_test3();
+
+  memcpy_test1();
+  memcpy_test2();
+  memcpy_test3();
+  memcpy_test4();
 	return 0;
 }
