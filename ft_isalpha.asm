@@ -3,7 +3,7 @@ section .text
         mov     rax, %1
         ret
     %endmacro
-        
+
     global  _ft_isalpha
 
 _ft_isalpha:
@@ -19,7 +19,7 @@ _elseif:
 _checkLower:
             cmp     rdi, 97
             jge     _elseifLower
-            jmp     _retFalse
+            jmp     _false
 
 _elseifLower:
             cmp     rdi, 122
