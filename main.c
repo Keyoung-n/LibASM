@@ -2,6 +2,7 @@
 #include <strings.h>
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 int ft_isalnum(int c);
 int ft_isascii(int c);
@@ -124,19 +125,6 @@ void puts_test2() {
     puts("Pass");
   else
     puts("Fail\n");
-}
-
-// memcpy
-
-void memcpy_test1() {
-  char test[] = "hello world";
-  char copy[] = "xxxxxxxxxxx";
-
-  printf("memcpy test1: ");
-  if (1)
-    printf("Pass\n");
-  else
-    printf("Fail\n");
 }
 
 // is print
@@ -289,6 +277,56 @@ void tolower_test3() {
       printf("failed\n");
 }
 
+// memcpy
+void memcpy_test1() {
+  char str1[] = "hello world";
+  char str2[] = "xxxxxxxxxxx";
+
+  printf("memcpy test1: ");
+  ft_memcpy(str2, str1, 11);
+  if(memcmp(str1, str2, 11) == 0)
+    printf("passed\n");
+  else
+    printf("failed\n");
+}
+
+void memcpy_test2() {
+  char str1[] = "hello world";
+  char str2[] = "xxxxxxxxxxx";
+
+  printf("memcpy test2: ");
+  ft_memcpy(str2, str1, 5);
+  if(memcmp(str1, str2, 5) == 0)
+    printf("passed\n");
+  else
+    printf("failed\n");
+}
+
+void memcpy_test3() {
+  int num1 = 100;
+  int num2 = 300;
+
+  printf("memcpy test3: ");
+  ft_memcpy(&num2, &num1, 3);
+  if(memcmp(&num1, &num2, 3) == 0)
+    printf("passed\n");
+  else
+    printf("failed\n");
+}
+
+void memcpy_test4() {
+  char str1[] = "hello world";
+  char str2[] = "xxxxxxxxxxx";
+  void *ret1  = ft_memcpy(str2, str1, 11);
+  void *ret2  = memcpy(str2, str1, 11);
+  printf("memcpy test4: ");
+  if(memcmp(ret1, ret2, 11) == 0)
+    printf("passed\n");
+  else
+    printf("failed\n");
+}
+
+
 int main() {
   bzero_test1();
   bzero_test2();
@@ -325,5 +363,10 @@ int main() {
   tolower_test1();
   tolower_test2();
   tolower_test3();
+
+  memcpy_test1();
+  memcpy_test2();
+  memcpy_test3();
+  memcpy_test4();
 	return 0;
 }

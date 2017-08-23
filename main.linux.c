@@ -326,6 +326,7 @@ void memcpy_test4() {
   else
     printf("failed\n");
 }
+
 int main() {
   bzero_test1();
   bzero_test2();
