@@ -306,5 +306,9 @@ int main() {
   toupper_test1();
   toupper_test2();
   toupper_test3();
+
+  tolower_test1();
+  tolower_test2();
+  tolower_test3();
 	return 0;
 }
