@@ -241,6 +241,39 @@ void toupper_test3() {
       printf("failed\n");
 }
 
+// tolower
+int _ft_tolower(int c);
+
+void tolower_test1() {
+  char a = 'A';
+
+  printf("tolower test1: ");
+  if (_ft_tolower(a) == 'a')
+      printf("passed\n");
+  else
+      printf("failed\n");
+}
+
+void tolower_test2() {
+  char b = 'B';
+
+  printf("toupper test2: ");
+  if (_ft_tolower(b) == tolower(b))
+      printf("passed\n");
+  else
+      printf("failed\n");
+}
+
+void tolower_test3() {
+  int test = 0;
+
+  printf("toupper test3: ");
+  if (_ft_toupper(test) == toupper(test))
+      printf("passed\n");
+  else
+      printf("failed\n");
+}
+
 int main() {
   bzero_test1();
   bzero_test2();
