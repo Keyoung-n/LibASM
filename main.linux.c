@@ -4,8 +4,18 @@
 #include <string.h>
 #include <ctype.h>
 
-// bzero
+int _ft_isalnum(int c);
+int _ft_isascii(int c);
+int _ft_isdigit(int c);
+int _ft_isprint(int c);
+int _ft_puts(const char *str);
+int _ft_tolower(int c);
+int _ft_toupper(int c);
+size_t _ft_strlen ( const char * str );
 void _ft_bzero(void *s, size_t n);
+void* _ft_memset (void * ptr, int value, size_t num);
+
+// bzero
 
 void bzero_test1() {
   char	control[] = "123456789";
@@ -18,6 +28,7 @@ void bzero_test1() {
   else
     printf("Fail\n");
 }
+
 void bzero_test2() {
   char	control[] = "123456789";
   char	subject[] = "123456789";
@@ -31,7 +42,6 @@ void bzero_test2() {
 }
 
 // memset
-void* _ft_memset (void * ptr, int value, size_t num);
 
 void memset_test1() {
   char	var[] = "hello world";
@@ -78,7 +88,6 @@ void memset_test4() {
 }
 
 // strlen
-size_t _ft_strlen ( const char * str );
 
 void strlen_test1() {
   char hello[] = "Hello world!";
@@ -101,7 +110,6 @@ void strlen_test2() {
 }
 
 // puts
-int _ft_puts(const char *str);
 
 void puts_test1() {
   puts("Puts test1: ");
@@ -118,7 +126,6 @@ void puts_test2() {
 }
 
 // isprint
-int _ft_isprint(int c);
 
 void isprint_test1()
 {
@@ -137,7 +144,6 @@ void isprint_test2()
 }
 
 // isalnum
-int _ft_isalnum(int c);
 
 void isalnum_test1()
 {
@@ -164,7 +170,6 @@ void isalnum_test3()
 }
 
 // isdigit
-int _ft_isdigit(int c);
 
 void   isdigit_test1()
 {
@@ -183,7 +188,6 @@ void   isdigit_test2()
 }
 
 // isascii
-int _ft_isascii(int c);
 
 void isascii_test1()
 {
@@ -209,9 +213,7 @@ void isascii_test3()
         printf("isascii test3 failed\n");
 }
 
-
 // toupper
-int _ft_toupper(int c);
 
 void toupper_test1() {
   char a = 'a';
@@ -244,7 +246,6 @@ void toupper_test3() {
 }
 
 // tolower
-int _ft_tolower(int c);
 
 void tolower_test1() {
   char a = 'A';

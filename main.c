@@ -3,14 +3,19 @@
 #include <stdio.h>
 #include <string.h>
 
-int ft_isprint(int c);
 int ft_isalnum(int c);
 int ft_isascii(int c);
-
 int ft_isdigit(int c);
+int ft_isprint(int c);
+int ft_puts(const char *str);
+int ft_tolower(int c);
+int ft_toupper(int c);
+size_t ft_strlen (const char * str);
+void  ft_bzero(void *s, size_t n);
+void* ft_memcpy(void* dest, const void* src, size_t count);
+void* ft_memset (void * ptr, int value, size_t num);
 
 // bzero
-void ft_bzero(void *s, size_t n);
 
 void bzero_test1() {
   char	control[] = "123456789";
@@ -23,6 +28,7 @@ void bzero_test1() {
   else
     printf("Fail\n");
 }
+
 void bzero_test2() {
   char	control[] = "123456789";
   char	subject[] = "123456789";
@@ -36,7 +42,6 @@ void bzero_test2() {
 }
 
 // memset
-void* ft_memset (void * ptr, int value, size_t num);
 
 void memset_test1() {
   char	var[] = "hello world";
@@ -47,6 +52,7 @@ void memset_test1() {
   else
     printf("Fail\n");
 }
+
 void memset_test2() {
   char	var[] = "hello world";
 
@@ -56,6 +62,7 @@ void memset_test2() {
   else
     printf("Fail\n");
 }
+
 void memset_test3() {
   char	var1[100], var2[100];
 
@@ -67,6 +74,7 @@ void memset_test3() {
   else
     printf("Fail\n");
 }
+
 void memset_test4() {
   char	var[] = ":D";
 
@@ -80,7 +88,6 @@ void memset_test4() {
 }
 
 // strlen
-size_t ft_strlen ( const char * str );
 
 void strlen_test1() {
   char hello[] = "Hello world!";
@@ -103,12 +110,12 @@ void strlen_test2() {
 }
 
 // puts
-int ft_puts(const char *str);
 
 void puts_test1() {
   puts("Puts test1...");
   ft_puts("Pass");
 }
+
 void puts_test2() {
   char test[] = "testing return...";
 
@@ -120,7 +127,6 @@ void puts_test2() {
 }
 
 // memcpy
-void* ft_memcpy( void* dest, const void* src, size_t count );
 
 void memcpy_test1() {
   char test[] = "hello world";
@@ -132,6 +138,8 @@ void memcpy_test1() {
   else
     printf("Fail\n");
 }
+
+// is print
 
 void isprint_test1()
 {
@@ -148,6 +156,8 @@ void isprint_test2()
     else if (ft_isprint(65) == 0)
         printf("isprint test1 failed\n");
 }
+
+// isalnum
 
 void isalnum_test1()
 {
@@ -172,6 +182,8 @@ void isalnum_test3()
     else
         printf("isalnum test3 failed\n");
 }
+
+// isdigit
 
 void   isdigit_test1()
 {
@@ -214,7 +226,6 @@ void isascii_test3()
 }
 
 // toupper
-int ft_toupper(int c);
 
 void toupper_test1() {
   char a = 'a';
@@ -247,7 +258,6 @@ void toupper_test3() {
 }
 
 // tolower
-int ft_tolower(int c);
 
 void tolower_test1() {
   char a = 'A';
