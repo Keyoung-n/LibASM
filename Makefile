@@ -11,6 +11,7 @@ SRCO	= 	ft_bzero.o 		\
 					ft_isalnum.o	\
 					ft_isascii.o  \
 					ft_toupper.o	\
+					ft_tolower.o	\
 
 OS := $(shell uname)
 all: $(NAME)
@@ -27,6 +28,7 @@ ifeq ($(OS), Darwin)
 	@nasm -f macho64 ft_isascii.asm
 	@nasm -f macho64 ft_strlen.asm
 	@nasm -f macho64 ft_toupper.asm
+	@nasm -f macho64 ft_tolower.asm
 else
 	@nasm -f elf64 ft_bzero.asm
 	@nasm -f elf64 ft_isalpha.asm
@@ -38,6 +40,7 @@ else
 	@nasm -f elf64 ft_isascii.asm
 	@nasm -f elf64 ft_strlen.asm
 	@nasm -f elf64 ft_toupper.asm
+	@nasm -f elf64 ft_tolower.asm
 endif
 	@ar r	$(NAME) $(SRCO)
 	@ranlib $(NAME)
