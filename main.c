@@ -213,6 +213,7 @@ void isascii_test3()
         printf("isascii test3 failed\n");
 }
 
+// toupper
 int ft_toupper(int c);
 
 void toupper_test1() {
@@ -224,6 +225,7 @@ void toupper_test1() {
   else
       printf("failed\n");
 }
+
 void toupper_test2() {
   char b = 'b';
 
@@ -233,11 +235,45 @@ void toupper_test2() {
   else
       printf("failed\n");
 }
+
 void toupper_test3() {
   int test = 0;
 
   printf("toupper test3: ");
   if (ft_toupper(test) == toupper(test))
+      printf("passed\n");
+  else
+      printf("failed\n");
+}
+
+// tolower
+int ft_tolower(int c);
+
+void tolower_test1() {
+  char a = 'A';
+
+  printf("tolower test1: ");
+  if (ft_tolower(a) == 'a')
+      printf("passed\n");
+  else
+      printf("failed\n");
+}
+
+void tolower_test2() {
+  char b = 'B';
+
+  printf("tolower test2: ");
+  if (ft_tolower(b) == tolower(b))
+      printf("passed\n");
+  else
+      printf("failed\n");
+}
+
+void tolower_test3() {
+  int test = 0;
+
+  printf("tolower test3: ");
+  if (ft_tolower(test) == tolower(test))
       printf("passed\n");
   else
       printf("failed\n");
@@ -271,5 +307,13 @@ int main() {
   isascii_test1();
   isascii_test2();
   isascii_test2();
+
+  toupper_test1();
+  toupper_test2();
+  toupper_test3();
+
+  tolower_test1();
+  tolower_test2();
+  tolower_test3();
 	return 0;
 }
