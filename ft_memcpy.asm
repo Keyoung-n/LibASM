@@ -9,8 +9,7 @@ _ft_memcpy:
   ret
 
 l1:
-  mov rbx, [rsi]
-  mov [rdi], bl
+  mov  rdi, [rsi]
   inc  rdi
   inc  rsi
   loop l1
