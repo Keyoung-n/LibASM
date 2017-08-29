@@ -11,10 +11,19 @@ int ft_isprint(int c);
 int ft_puts(const char *str);
 int ft_tolower(int c);
 int ft_toupper(int c);
+#include <fcntl.h>
 size_t ft_strlen(const char * str);
 void  ft_bzero(void *s, size_t n);
 void* ft_memcpy(void* dest, const void* src, size_t count);
 void* ft_memset(void * ptr, int value, size_t num);
+void ft_cat(int fd);
+
+// ft_cat
+void cat_test() {
+  int fd = open("main.c",  O_RDWR);
+  ft_cat(fd);
+  printf ("if you see main.c avove this then it works\n");
+}
 
 // bzero
 
@@ -327,6 +336,8 @@ void memcpy_test4() {
 }
 
 int main() {
+  cat_test();
+  
   bzero_test1();
   bzero_test2();
 
