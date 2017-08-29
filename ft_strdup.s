@@ -1,5 +1,4 @@
 section .text
-
     extern  _ft_strlen
     extern  _malloc
     global  _ft_strdup
