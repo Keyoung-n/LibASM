@@ -7,18 +7,15 @@
 int ft_isalnum(int c);
 int ft_isascii(int c);
 int ft_isdigit(int c);
-char * ft_strdup(char *str);
-void ft_cat(int fd);
-
-int		ft_strcmp(const char *s1, const char *s2)
-{
-	while (*s1 && *s2 && *s1 == *s2)
-	{
-		s1++;
-		s2++;
-	}
-	return ((unsigned char)*s1 - (unsigned char)*s2);
-}
+int ft_isprint(int c);
+int ft_puts(const char *str);
+int ft_tolower(int c);
+int ft_toupper(int c);
+size_t ft_strlen(const char * str);
+void  ft_bzero(void *s, size_t n);
+void* ft_memcpy(void* dest, const void* src, size_t count);
+void* ft_memset(void * ptr, int value, size_t num);
+char* ft_strdup(char *str);
 
 // bzero
 
@@ -251,6 +248,17 @@ void memcpy_test4() {
 
 }
 
+void strdup_test1() {
+    char str1[] = "hello world";
+    char *ret1 = ft_strdup(str1);
+    char *ret2 = strdup(str1);
+    printf("strdup test1: ");
+    if(memcmp(ret1, ret2, 11) == 0)
+      printf("passed\n");
+    else
+      printf("failed\n"); 
+}
+
 int main() {
 	  cat_test();
   bzero_test1();
@@ -294,6 +302,7 @@ int main() {
   memcpy_test2();
   memcpy_test3();
   memcpy_test4();
-  memcpy_test5();
+
+  strdup_test1();
 	return 0;
 }
