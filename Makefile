@@ -9,19 +9,11 @@ SRCO	= 	ft_bzero.o 		\
 					ft_strlen.o		\
 					ft_puts.o			\
 					ft_isalnum.o	\
-<<<<<<< HEAD
 					ft_isascii.o    \
 					ft_strlen.o		\
 					ft_strdup.o		\
 					ft_memcpy.o		\
 					ft_cat.o
-=======
-					ft_isascii.o  \
-					ft_toupper.o	\
-					ft_tolower.o	\
-					ft_memcpy.o		\
->>>>>>> master
-
 OS := $(shell uname)
 all: $(NAME)
 
@@ -35,31 +27,25 @@ $(NAME):
 	@nasm -f macho64 ft_memcpy.asm
 	@nasm -f macho64 ft_memset.asm
 	@nasm -f macho64 ft_puts.asm
-<<<<<<< HEAD
 	@nasm -f macho64 ft_isalnum.asm
 	@nasm -f macho64 ft_isascii.asm
 	@nasm -f macho64 ft_strlen.asm
 	@nasm -f macho64 ft_strdup.asm
 	@nasm -f macho64 ft_cat.s
-=======
-	@nasm -f macho64 ft_strlen.asm
-	@nasm -f macho64 ft_tolower.asm
-	@nasm -f macho64 ft_toupper.asm
 else
-	@nasm -f elf64 ft_bzero.asm
-	@nasm -f elf64 ft_isalnum.asm
-	@nasm -f elf64 ft_isalpha.asm
-	@nasm -f elf64 ft_isascii.asm
-	@nasm -f elf64 ft_isdigit.asm
-	@nasm -f elf64 ft_isprint.asm
-	@nasm -f elf64 ft_memcpy.asm
-	@nasm -f elf64 ft_memset.asm
-	@nasm -f elf64 ft_puts.asm
-	@nasm -f elf64 ft_strlen.asm
-	@nasm -f elf64 ft_tolower.asm
-	@nasm -f elf64 ft_toupper.asm
+	@nasm -f elf64 ft_bzero.s
+	@nasm -f elf64 ft_isalnum.s
+	@nasm -f elf64 ft_isalpha.s
+	@nasm -f elf64 ft_isascii.s
+	@nasm -f elf64 ft_isdigit.s
+	@nasm -f elf64 ft_isprint.s
+	@nasm -f elf64 ft_memcpy.s
+	@nasm -f elf64 ft_memset.s
+	@nasm -f elf64 ft_puts.s
+	@nasm -f elf64 ft_strlen.s
+	@nasm -f elf64 ft_tolower.s
+	@nasm -f elf64 ft_toupper.s
 endif
->>>>>>> master
 	@ar r	$(NAME) $(SRCO)
 	@ranlib $(NAME)
 

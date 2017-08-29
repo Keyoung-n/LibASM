@@ -237,12 +237,18 @@ void strdup_test()
         printf("strdup test1 failed. ret = %s\n", ret);
 }
 
-void cat_test()
-{
-	int fd = open("main.c",  O_RDWR);
 
-	ft_cat(fd);
-	printf ("if you see main.c avove this then it works\n");
+void memcpy_test4() {
+  char str1[] = "hello world";
+  char str2[] = "xxxxxxxxxxx";
+  void *ret1  = ft_memcpy(str2, str1, 0);
+  void *ret2  = memcpy(str2, str1, 0);
+  printf("memcpy test4: ");
+  if(memcmp(ret1, ret2, 11) == 0)
+    printf("passed\n");
+  else
+    printf("failed\n");
+
 }
 
 int main() {
@@ -289,6 +295,5 @@ int main() {
   memcpy_test3();
   memcpy_test4();
   memcpy_test5();
-
 	return 0;
 }
