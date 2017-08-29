@@ -3,7 +3,9 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+#include <fcntl.h>
 
+char* ft_strdup(char *str);
 int ft_isalnum(int c);
 int ft_isascii(int c);
 int ft_isdigit(int c);
@@ -11,12 +13,11 @@ int ft_isprint(int c);
 int ft_puts(const char *str);
 int ft_tolower(int c);
 int ft_toupper(int c);
-#include <fcntl.h>
 size_t ft_strlen(const char * str);
 void  ft_bzero(void *s, size_t n);
+void ft_cat(int fd);
 void* ft_memcpy(void* dest, const void* src, size_t count);
 void* ft_memset(void * ptr, int value, size_t num);
-void ft_cat(int fd);
 
 // ft_cat
 void cat_test() {
@@ -335,9 +336,26 @@ void memcpy_test4() {
     printf("failed\n");
 }
 
+// strdup
+void strdup_test1()
+{
+    char *test = (char *)malloc(3);
+    test[0] = 'h';
+    test[1] = 'i';
+    test[2]= '\0';
+
+    char *ret = ft_strdup(test);
+
+    printf("strdup test1: ");
+    if (memcmp(ret, test, 2) == 0)
+      printf("passed\n");
+    else
+      printf("failed\n");
+}
+
 int main() {
   cat_test();
-  
+
   bzero_test1();
   bzero_test2();
 
@@ -378,5 +396,7 @@ int main() {
   memcpy_test2();
   memcpy_test3();
   memcpy_test4();
+
+  strdup_test1();
 	return 0;
 }
