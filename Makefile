@@ -13,6 +13,7 @@ SRCO	= 	ft_bzero.o 		\
 					ft_toupper.o	\
 					ft_tolower.o	\
 					ft_memcpy.o		\
+					ft_strdup.o		\
 
 OS := $(shell uname)
 all: $(NAME)
@@ -31,6 +32,7 @@ ifeq ($(OS), Darwin)
 	@nasm -f macho64 ft_strlen.s
 	@nasm -f macho64 ft_tolower.s
 	@nasm -f macho64 ft_toupper.s
+	@nasm -f macho64 ft_strdup.s
 else
 	@nasm -f elf64 ft_bzero.s
 	@nasm -f elf64 ft_isalnum.s
@@ -44,6 +46,7 @@ else
 	@nasm -f elf64 ft_strlen.s
 	@nasm -f elf64 ft_tolower.s
 	@nasm -f elf64 ft_toupper.s
+	@nasm -f macho64 ft_strdup.s
 endif
 	@ar r	$(NAME) $(SRCO)
 	@ranlib $(NAME)

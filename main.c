@@ -15,6 +15,7 @@ size_t ft_strlen(const char * str);
 void  ft_bzero(void *s, size_t n);
 void* ft_memcpy(void* dest, const void* src, size_t count);
 void* ft_memset(void * ptr, int value, size_t num);
+char* ft_strdup(char *str);
 
 // bzero
 
@@ -326,6 +327,17 @@ void memcpy_test4() {
     printf("failed\n");
 }
 
+void strdup_test1() {
+    char str1[] = "hello world";
+    char *ret1 = ft_strdup(str1);
+    char *ret2 = strdup(str1);
+    printf("strdup test1: ");
+    if(memcmp(ret1, ret2, 11) == 0)
+      printf("passed\n");
+    else
+      printf("failed\n"); 
+}
+
 int main() {
   bzero_test1();
   bzero_test2();
@@ -367,5 +379,7 @@ int main() {
   memcpy_test2();
   memcpy_test3();
   memcpy_test4();
+
+  strdup_test1();
 	return 0;
 }
