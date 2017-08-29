@@ -4,7 +4,6 @@
 #include <string.h>
 #include <fcntl.h>
 
-int ft_isprint(int c);
 int ft_isalnum(int c);
 int ft_isascii(int c);
 int ft_isdigit(int c);
@@ -22,7 +21,6 @@ int		ft_strcmp(const char *s1, const char *s2)
 }
 
 // bzero
-void ft_bzero(void *s, size_t n);
 
 void bzero_test1() {
   char	control[] = "123456789";
@@ -35,6 +33,7 @@ void bzero_test1() {
   else
     printf("Fail\n");
 }
+
 void bzero_test2() {
   char	control[] = "123456789";
   char	subject[] = "123456789";
@@ -48,7 +47,6 @@ void bzero_test2() {
 }
 
 // memset
-void* ft_memset (void * ptr, int value, size_t num);
 
 void memset_test1() {
   char	var[] = "hello world";
@@ -59,6 +57,7 @@ void memset_test1() {
   else
     printf("Fail\n");
 }
+
 void memset_test2() {
   char	var[] = "hello world";
 
@@ -68,6 +67,7 @@ void memset_test2() {
   else
     printf("Fail\n");
 }
+
 void memset_test3() {
   char	var1[100], var2[100];
 
@@ -79,6 +79,7 @@ void memset_test3() {
   else
     printf("Fail\n");
 }
+
 void memset_test4() {
   char	var[] = ":D";
 
@@ -92,7 +93,6 @@ void memset_test4() {
 }
 
 // strlen
-size_t ft_strlen ( const char * str );
 
 void strlen_test1() {
   char hello[] = "Hello world!";
@@ -115,12 +115,12 @@ void strlen_test2() {
 }
 
 // puts
-int ft_puts(const char *str);
 
 void puts_test1() {
   puts("Puts test1...");
   ft_puts("Pass");
 }
+
 void puts_test2() {
   char test[] = "testing return...";
 
@@ -131,19 +131,7 @@ void puts_test2() {
     puts("Fail\n");
 }
 
-// memcpy
-void* ft_memcpy( void* dest, const void* src, size_t count );
-
-void memcpy_test1() {
-  char test[] = "hello world";
-  char copy[] = "xxxxxxxxxxx";
-
-  printf("memcpy test1: ");
-  if (1)
-    printf("Pass\n");
-  else
-    printf("Fail\n");
-}
+// is print
 
 void isprint_test1()
 {
@@ -160,6 +148,8 @@ void isprint_test2()
     else if (ft_isprint(65) == 0)
         printf("isprint test1 failed\n");
 }
+
+// isalnum
 
 void isalnum_test1()
 {
@@ -184,6 +174,8 @@ void isalnum_test3()
     else
         printf("isalnum test3 failed\n");
 }
+
+// isdigit
 
 void   isdigit_test1()
 {
@@ -224,6 +216,7 @@ void isascii_test3()
     else
         printf("isascii test3 failed\n");
 }
+
 
 void strdup_test()
 {
@@ -282,6 +275,20 @@ int main() {
   isascii_test2();
   isascii_test2();
 
+
+  toupper_test1();
+  toupper_test2();
+  toupper_test3();
+
+  tolower_test1();
+  tolower_test2();
+  tolower_test3();
+
+  memcpy_test1();
+  memcpy_test2();
+  memcpy_test3();
+  memcpy_test4();
+  memcpy_test5();
 
 	return 0;
 }
