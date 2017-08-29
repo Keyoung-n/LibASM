@@ -3,38 +3,32 @@ section .text
         mov     rax, %1
         ret
     %endmacro
-    EXTERN  ft_strlen
-    global  ft_strdup
+    EXTERN  _ft_strlen
+    EXTERN _malloc
+    EXTERN _ft_memcpy
+    global  _ft_strdup
 
+_ft_strdup:
+            push    rbp
+            mov     rbp, rsp
+            sub     rbp, 16
 
-ft_strdup:
-            call ft_strlen; call ft_strlen
+            mov     rsi, rdi; backup string pointer into rbx
+
+            call _ft_strlen; call ft_strlen
             inc rax; increment return of ft_strlen
-            mov rbx, rdi; backup string pointer into rbx
-            mov rdi, rax; move return of ft_strlen into rdi to pass to malloc
-            extern malloc
-            call malloc wrt ..plt; call malloc
-            mov rdi, 0
-            cmp rax, 0; make sure memory was allocated before we loop
-            jne loop; if memory was allocated then start looping
-            jmp _false; if it goes sideways return 0
+            mov rax, [rsi]
+            ;mov r11, rax; move return of ft_strlen into rdi to pass to malloc
+            ;call _malloc; call malloc
 
-;rax = pointer to memory from malloc
-;rbx = string we got as a parameter
-loop:
-            cmp rbx, 0; check if end of string
-            jmp RetPointer; return if we are done
-            mov rdi, [rbx]
-            mov [rax], rdi; copy pointer value into memory pointer
-            add rax, 1; increment rax pointer
-            add rbx, 1; increment rbx pointer
-            jmp loop ; loop
+            ;mov rdi, rax
+            ;mov rsi, r8
+            ;mov rdx, r9
+            ;jmp _ft_memcpy; if memory was allocated then start looping
+            ret
+            ;ret
 
 RetPointer:
-            ;add the null char and return since the pointer is already in rax
-            mov byte [rax], 0
-            dec rax
-            dec rax
             ret
 
 _false:

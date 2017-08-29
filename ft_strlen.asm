@@ -1,7 +1,7 @@
 section .text
-    global ft_strlen
+    global _ft_strlen
 
-ft_strlen:
+_ft_strlen:
             push    rbp
             mov     rbp, rsp
             sub     rcx, rcx        ; initialize rcx to 0

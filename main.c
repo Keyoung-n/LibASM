@@ -2,12 +2,24 @@
 #include <strings.h>
 #include <stdio.h>
 #include <string.h>
+#include <fcntl.h>
 
 int ft_isprint(int c);
 int ft_isalnum(int c);
 int ft_isascii(int c);
-
 int ft_isdigit(int c);
+char * ft_strdup(char *str);
+void ft_cat(int fd);
+
+int		ft_strcmp(const char *s1, const char *s2)
+{
+	while (*s1 && *s2 && *s1 == *s2)
+	{
+		s1++;
+		s2++;
+	}
+	return ((unsigned char)*s1 - (unsigned char)*s2);
+}
 
 // bzero
 void ft_bzero(void *s, size_t n);
@@ -213,7 +225,35 @@ void isascii_test3()
         printf("isascii test3 failed\n");
 }
 
+void strdup_test()
+{
+    char *test = (char *)malloc(3);
+    test[0] = 'h';
+    test[1] = 'i';
+    test[2]= '\0';
+
+    char *ret;
+
+    printf("calling str dup\n");
+    ret = ft_strdup(test);
+    printf("str dup return");
+
+    if (ft_strcmp(ret, test) == 0)
+        printf("strdup test1 passed\n");
+    else
+        printf("strdup test1 failed. ret = %s\n", ret);
+}
+
+void cat_test()
+{
+	int fd = open("main.c",  O_RDWR);
+
+	ft_cat(fd);
+	printf ("if you see main.c avove this then it works\n");
+}
+
 int main() {
+	  cat_test();
   bzero_test1();
   bzero_test2();
 
@@ -241,5 +281,7 @@ int main() {
   isascii_test1();
   isascii_test2();
   isascii_test2();
+
+
 	return 0;
 }
