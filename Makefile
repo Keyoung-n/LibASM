@@ -9,9 +9,9 @@ SRCO	= 	ft_bzero.o 		\
 					ft_strlen.o		\
 					ft_puts.o			\
 					ft_isalnum.o	\
-					ft_isascii.o  \
-					ft_toupper.o	\
-					ft_tolower.o	\
+					ft_isascii.o    \
+					ft_strlen.o		\
+					ft_strdup.o		\
 					ft_memcpy.o		\
 					ft_strdup.o		\
 

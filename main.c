@@ -2,7 +2,7 @@
 #include <strings.h>
 #include <stdio.h>
 #include <string.h>
-#include <ctype.h>
+#include <fcntl.h>
 
 int ft_isalnum(int c);
 int ft_isascii(int c);
@@ -214,106 +214,26 @@ void isascii_test3()
         printf("isascii test3 failed\n");
 }
 
-// toupper
 
-void toupper_test1() {
-  char a = 'a';
+void strdup_test()
+{
+    char *test = (char *)malloc(3);
+    test[0] = 'h';
+    test[1] = 'i';
+    test[2]= '\0';
 
-  printf("toupper test1: ");
-  if (ft_toupper(a) == 'A')
-      printf("passed\n");
-  else
-      printf("failed\n");
+    char *ret;
+
+    printf("calling str dup\n");
+    ret = ft_strdup(test);
+    printf("str dup return");
+
+    if (ft_strcmp(ret, test) == 0)
+        printf("strdup test1 passed\n");
+    else
+        printf("strdup test1 failed. ret = %s\n", ret);
 }
 
-void toupper_test2() {
-  char b = 'b';
-
-  printf("toupper test2: ");
-  if (ft_toupper(b) == toupper(b))
-      printf("passed\n");
-  else
-      printf("failed\n");
-}
-
-void toupper_test3() {
-  int test = 0;
-
-  printf("toupper test3: ");
-  if (ft_toupper(test) == toupper(test))
-      printf("passed\n");
-  else
-      printf("failed\n");
-}
-
-// tolower
-
-void tolower_test1() {
-  char a = 'A';
-
-  printf("tolower test1: ");
-  if (ft_tolower(a) == 'a')
-      printf("passed\n");
-  else
-      printf("failed\n");
-}
-
-void tolower_test2() {
-  char b = 'B';
-
-  printf("tolower test2: ");
-  if (ft_tolower(b) == tolower(b))
-      printf("passed\n");
-  else
-      printf("failed\n");
-}
-
-void tolower_test3() {
-  int test = 0;
-
-  printf("tolower test3: ");
-  if (ft_tolower(test) == tolower(test))
-      printf("passed\n");
-  else
-      printf("failed\n");
-}
-
-// memcpy
-void memcpy_test1() {
-  char str1[] = "hello world";
-  char str2[] = "xxxxxxxxxxx";
-
-  printf("memcpy test1: ");
-  ft_memcpy(str2, str1, 11);
-  if(memcmp(str1, str2, 11) == 0)
-    printf("passed\n");
-  else
-    printf("failed\n");
-}
-
-void memcpy_test2() {
-  char str1[] = "hello world";
-  char str2[] = "xxxxxxxxxxx";
-
-  printf("memcpy test2: ");
-  ft_memcpy(str2, str1, 5);
-  if(memcmp(str1, str2, 5) == 0)
-    printf("passed\n");
-  else
-    printf("failed\n");
-}
-
-void memcpy_test3() {
-  int num1 = 100;
-  int num2 = 300;
-
-  printf("memcpy test3: ");
-  ft_memcpy(&num2, &num1, 3);
-  if(memcmp(&num1, &num2, 3) == 0)
-    printf("passed\n");
-  else
-    printf("failed\n");
-}
 
 void memcpy_test4() {
   char str1[] = "hello world";
@@ -325,6 +245,7 @@ void memcpy_test4() {
     printf("passed\n");
   else
     printf("failed\n");
+
 }
 
 void strdup_test1() {
@@ -339,6 +260,7 @@ void strdup_test1() {
 }
 
 int main() {
+	  cat_test();
   bzero_test1();
   bzero_test2();
 
@@ -366,6 +288,7 @@ int main() {
   isascii_test1();
   isascii_test2();
   isascii_test2();
+
 
   toupper_test1();
   toupper_test2();
