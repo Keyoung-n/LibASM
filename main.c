@@ -328,9 +328,8 @@ void memcpy_test4() {
   char str1[] = "hello world";
   char str2[] = "xxxxxxxxxxx";
   void *ret1  = ft_memcpy(str2, str1, 0);
-  void *ret2  = memcpy(str2, str1, 0);
   printf("memcpy test4: ");
-  if(memcmp(ret1, ret2, 11) == 0)
+  if(memcmp(ret1, str1, 11) == 0)
     printf("passed\n");
   else
     printf("failed\n");
