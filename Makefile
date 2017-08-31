@@ -1,7 +1,7 @@
 NAME	= libfts.a
 
-SRCO	= 	ft_bzero.o 		\
-					ft_cat.o			\
+SRCO	= 	ft_cat.o			\
+					ft_bzero.o 		\
 					ft_isalnum.o	\
 					ft_isalpha.o	\
 					ft_isascii.o  \
