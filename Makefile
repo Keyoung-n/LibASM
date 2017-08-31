@@ -21,8 +21,6 @@ OS := $(shell uname)
 all: $(NAME)
 
 $(NAME):
-
-ifeq ($(OS), Darwin)
 	@nasm -f macho64 ft_bzero.s
 	@nasm -f macho64 ft_cat.s
 	@nasm -f macho64 ft_cat.s
@@ -38,23 +36,6 @@ ifeq ($(OS), Darwin)
 	@nasm -f macho64 ft_strlen.s
 	@nasm -f macho64 ft_tolower.s
 	@nasm -f macho64 ft_toupper.s
-else
-	@nasm -f elf64 ft_bzero.s
-	@nasm -f elf64 ft_cat.s
-	@nasm -f elf64 ft_cat.s
-	@nasm -f elf64 ft_isalnum.s
-	@nasm -f elf64 ft_isalpha.s
-	@nasm -f elf64 ft_isascii.s
-	@nasm -f elf64 ft_isdigit.s
-	@nasm -f elf64 ft_isprint.s
-	@nasm -f elf64 ft_memcpy.s
-	@nasm -f elf64 ft_memset.s
-	@nasm -f elf64 ft_puts.s
-	@nasm -f elf64 ft_strlen.s
-	@nasm -f elf64 ft_tolower.s
-	@nasm -f elf64 ft_toupper.s
-	@nasm -f macho64 ft_strdup.s
-endif
 	@ar r	$(NAME) $(SRCO)
 	@ranlib $(NAME)
 
@@ -67,9 +48,5 @@ fclean: clean
 re: fclean all
 
 run: re
-ifeq ($(OS), Darwin)
 	@gcc -o tests main.c $(NAME)
-else
-	@gcc -o tests main.linux.c $(NAME)
-endif
 	./tests
