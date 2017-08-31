@@ -8,6 +8,7 @@
 char* ft_strcat(char *dest, const char *src);
 char* ft_strdup(char *str);
 int ft_isalnum(int c);
+int ft_isalpha(int c);
 int ft_isascii(int c);
 int ft_isdigit(int c);
 int ft_isprint(int c);
@@ -191,6 +192,25 @@ void   isdigit_test2()
         printf("isdigit test2 passed\n");
     else
         printf("isdigit test2 failed\n");
+}
+
+// isalpha
+void   isalpha_test1()
+{
+    printf("isalpha test1: ");
+    if (ft_isalpha('A'))
+        printf("passed\n");
+    else
+        printf("failed\n");
+}
+
+void   isalpha_test2()
+{
+    printf("isalpha test2: ");
+    if (ft_isalpha('1') == 0)
+        printf("passed\n");
+    else
+        printf("failed\n");
 }
 
 void isascii_test1()
@@ -402,6 +422,9 @@ int main() {
 
   puts_test1();
   puts_test2();
+
+  isalpha_test1();
+  isalpha_test2();
 
   isprint_test1();
   isprint_test2();
