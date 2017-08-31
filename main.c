@@ -23,7 +23,7 @@ void* ft_memset(void * ptr, int value, size_t num);
 void cat_test() {
   int fd = open("main.c",  O_RDWR);
   ft_cat(fd);
-  printf ("if you see main.c avove this then it works\n");
+  printf ("if you see main.c avove this then ft_cat works\n");
 }
 
 // bzero
