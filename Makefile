@@ -10,9 +10,8 @@ SRCO	= 	ft_cat.o			\
 					ft_memcpy.o		\
 					ft_memset.o 	\
 					ft_puts.o			\
+					ft_strcat.o		\
 					ft_strdup.o		\
-					ft_strlen.o		\
-					ft_strlen.o		\
 					ft_strlen.o		\
 					ft_tolower.o	\
 					ft_toupper.o
@@ -23,7 +22,6 @@ all: $(NAME)
 $(NAME):
 	@nasm -f macho64 ft_bzero.s
 	@nasm -f macho64 ft_cat.s
-	@nasm -f macho64 ft_cat.s
 	@nasm -f macho64 ft_isalnum.s
 	@nasm -f macho64 ft_isalpha.s
 	@nasm -f macho64 ft_isascii.s
@@ -32,6 +30,7 @@ $(NAME):
 	@nasm -f macho64 ft_memcpy.s
 	@nasm -f macho64 ft_memset.s
 	@nasm -f macho64 ft_puts.s
+	@nasm -f macho64 ft_strcat.s
 	@nasm -f macho64 ft_strdup.s
 	@nasm -f macho64 ft_strlen.s
 	@nasm -f macho64 ft_tolower.s

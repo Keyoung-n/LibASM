@@ -5,6 +5,7 @@
 #include <ctype.h>
 #include <fcntl.h>
 
+char* ft_strcat(char *dest, const char *src);
 char* ft_strdup(char *str);
 int ft_isalnum(int c);
 int ft_isascii(int c);
@@ -27,7 +28,6 @@ void cat_test() {
 }
 
 // bzero
-
 void bzero_test1() {
   char	control[] = "123456789";
   char	subject[] = "123456789";
@@ -53,7 +53,6 @@ void bzero_test2() {
 }
 
 // memset
-
 void memset_test1() {
   char	var[] = "hello world";
 
@@ -99,7 +98,6 @@ void memset_test4() {
 }
 
 // strlen
-
 void strlen_test1() {
   char hello[] = "Hello world!";
 
@@ -121,7 +119,6 @@ void strlen_test2() {
 }
 
 // puts
-
 void puts_test1() {
   puts("Puts test1...");
   ft_puts("Pass");
@@ -138,7 +135,6 @@ void puts_test2() {
 }
 
 // is print
-
 void isprint_test1()
 {
     if (ft_isprint(200) == 1)
@@ -156,7 +152,6 @@ void isprint_test2()
 }
 
 // isalnum
-
 void isalnum_test1()
 {
     if (ft_isalnum(65))
@@ -182,7 +177,6 @@ void isalnum_test3()
 }
 
 // isdigit
-
 void   isdigit_test1()
 {
     if (ft_isdigit('1'))
@@ -224,7 +218,6 @@ void isascii_test3()
 }
 
 // toupper
-
 void toupper_test1() {
   char a = 'a';
 
@@ -256,7 +249,6 @@ void toupper_test3() {
 }
 
 // tolower
-
 void tolower_test1() {
   char a = 'A';
 
@@ -363,6 +355,37 @@ void strdup_test1()
       printf("failed\n");
 }
 
+
+// strcat
+void strcat_test1() {
+  char src[50], dest[50];
+
+  strcpy(src,  "World");
+  strcpy(dest, "Hello ");
+
+  ft_strcat(dest, src);
+
+  printf("strcat test1: ");
+  if (memcmp(dest, "Hello World", 11) == 0)
+    printf("passed\n");
+  else
+    printf("failed\n");
+}
+
+void strcat_test2() {
+  char src[50], dest[50];
+
+  strcpy(src,  "World");
+  strcpy(dest, "Hello ");
+
+  char *ret = ft_strcat(dest, src);
+
+  printf("strcat test2: ");
+  if (memcmp(ret, "Hello World", 11) == 0)
+    printf("passed\n");
+  else
+    printf("failed\n");
+}
 int main() {
   cat_test();
 
@@ -409,5 +432,8 @@ int main() {
   memcpy_test5();
 
   strdup_test1();
+
+  strcat_test1();
+  strcat_test2();
 	return 0;
 }
