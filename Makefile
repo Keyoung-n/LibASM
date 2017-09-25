@@ -37,15 +37,14 @@ $(NAME):
 	@nasm -f macho64 ft_toupper.s
 	@ar r	$(NAME) $(SRCO)
 	@ranlib $(NAME)
+	@gcc -o tests main.c -Wl,-no_pie $(NAME)
+	./tests
 
 clean:
 	@rm -f $(SRCO)
 
 fclean: clean
+	@rm -f tests
 	@rm -f $(NAME)
 
 re: fclean all
-
-run: re
-	@gcc -o tests main.c $(NAME)
-	./tests
