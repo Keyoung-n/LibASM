@@ -1,3 +1,3 @@
 # LibASM 
 
-## my little c library in assembly.
+My little c library in assembly.
